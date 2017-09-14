@@ -1,6 +1,15 @@
 (* Functions and Type Inference *)
 
-(* Run this code in utop. *)
+(*
+ * Compile this file using the following command:
+ *
+ *      ocamlfind ocamlc -linkpkg -thread -package core functions_and_type_inference.ml -o functions_and_type_inference.byte
+ *
+ * You can run into problems described here[1] if you use glibc >= 2.26.
+ * In such case just copy-paste this code into utop.
+ *
+ * [1] https://github.com/janestreet/core/issues/95
+ *)
 
 let square x = x * x
 
