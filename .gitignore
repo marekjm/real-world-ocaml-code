@@ -4,6 +4,7 @@
 *.cmi
 *.cmo
 *.cmx
+*.byte
 
 _build/
 
