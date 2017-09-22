@@ -5,6 +5,7 @@
 *.cmo
 *.cmx
 *.byte
+*.native
 
 _build/
 
