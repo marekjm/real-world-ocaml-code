@@ -1,8 +1,30 @@
 (* The book uses `open Core.Std` but it is deprecated. *)
 (* open Core *)
 
+(*
+ * The below code will not work if you have glibc 2.26.
+ * It appears that Core is broken with this version of glibc.
+ *)
 let float_from_string = Core.Float.of_string
+(*
 let get_line = Stdio.In_channel.input_line Stdio.In_channel.stdin
+*)
+
+(*
+ * Use this if you have glibc 2.26.
+ *)
+(*
+let float_from_string s option =
+    match s with
+    | Some x = float_of_string x
+    | None -> 0.0
+*)
+
+let get_line =
+    try
+        let s = read_line () in Some s
+    with
+    | End_of_file -> None
 
 let rec read_and_accumulate accum =
     (*
@@ -12,22 +34,8 @@ let rec read_and_accumulate accum =
      *)
     let line = get_line in
     match line with
-    | None -> accum
     | Some x -> read_and_accumulate (accum +. float_from_string x)
-
-(*
-let get_line () =
-    try
-        let s = read_line () in Some s
-    with
-    | End_of_file -> None
-
-let () =
-    let s = get_line () in
-    match s with
-    | Some s -> print_endline s
-    | None -> ()
-    *)
+    | None -> accum
 
 let () =
     Stdio.printf "Total: %F\n" (read_and_accumulate 0.)
