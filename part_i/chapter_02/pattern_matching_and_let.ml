@@ -13,7 +13,8 @@ let upcase_first_entry line =
 let upcase_first_entry line =
     match String.split_on_char ',' line with
     | [] -> assert false (* String.split returns at least one element *)
-    | first :: rest -> String.concat "," (String.uppercase first :: rest)
+    (* String.uppercase_ascii is used because String.uppercase is deprecated in newer versions. *)
+    | first :: rest -> String.concat "," (String.uppercase_ascii first :: rest)
 
 
 let () =
