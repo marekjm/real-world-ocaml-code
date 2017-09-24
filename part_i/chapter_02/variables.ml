@@ -11,4 +11,4 @@ let area_of_ring inner_radius outer_radius =
 
 let () =
     print_endline dashed_languages;
-    print_endline (string_of_float (area_of_ring 1. 3))
+    print_endline (string_of_float (area_of_ring 1. 3.))
