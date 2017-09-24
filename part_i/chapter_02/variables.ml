@@ -1,8 +1,14 @@
 let languages = "OCaml,Python,C++,C"
 
 let dashed_languages =
-    let language_list = String.split languages ~on:',' in
-    String.concat ~sep:"-" language_list
+    (* The book uses String.split, but aparently it was changed to
+     * String.split_on_char.
+     *)
+    let language_list = String.split_on_char ',' languages in
+    (* The book uses String.concat ~sep: but the new version
+     * does not have the named argument.
+     *)
+    String.concat "-" language_list
 
 let area_of_ring inner_radius outer_radius =
     let pi = acos (-1.) in
