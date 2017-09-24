@@ -1,3 +1,5 @@
+(* Use ocamlc to compile this file. *)
+
 let languages = "OCaml,Python,C++,C"
 
 let dashed_languages =
