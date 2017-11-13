@@ -33,20 +33,3 @@ let main () = Command.run (Bench.make_command [
 
 
 let () = main ()
-
-(*
-let run_bench tests =
-    Bench.bench
-        ~ascii_table:true
-        ~display:Textutils.Ascii_table.Display.column_titles
-        tests
-;;
-
-
-[ Bench.Test.create ~name:"plus_one_match" (fun () ->
-    ignore (plus_one_match 10))
-; Bench.Test.create ~name:"plus_one_if" (fun () ->
-    ignore (plus_one_if 10)) ]
-|> run_bench
-;;
-*)
