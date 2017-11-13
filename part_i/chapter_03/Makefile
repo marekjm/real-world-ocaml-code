@@ -2,7 +2,8 @@ OCAMLCC=ocamlfind ocamlc
 OCAML_PACKAGES=-package core -package core_bench
 OCAML_FLAGS=-linkpkg -thread $(OCAML_PACKAGES)
 
-all: example.byte performance.byte performance_sum.byte render_table.byte
+all: example.byte performance.byte performance_sum.byte render_table.byte \
+	more_useful_list_functions.byte
 
 clean:
 	rm -f *.cm*
