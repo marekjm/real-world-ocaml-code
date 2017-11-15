@@ -4,7 +4,8 @@ OCAML_FLAGS=-linkpkg -thread $(OCAML_PACKAGES)
 
 all: example.byte performance.byte performance_sum.byte render_table.byte \
 	more_useful_list_functions.byte \
-	tail_recursion.byte
+	tail_recursion.byte \
+	terser_and_faster_patterns.byte
 
 clean:
 	rm -f *.cm*
