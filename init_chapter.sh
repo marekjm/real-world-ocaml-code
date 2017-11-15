@@ -34,9 +34,9 @@ OCAML_PACKAGES=-package core -package core_bench
 OCAML_FLAGS=-linkpkg -thread \$(OCAML_PACKAGES)
 
 # Put you default targets here, like this:
-# all: \
-#     first_target.byte \
-#     second_target.byte \
+# all: \\
+#     first_target.byte \\
+#     second_target.byte \\
 #     nth_target.byte
 all:
 
