@@ -17,12 +17,12 @@ let build_counts () =
     In_channel.fold_lines In_channel.stdin ~init:[] ~f:(fun counts line ->
         let count =
             (* Note the use of comparator. Original example did not have it. *)
-            match List.Assoc.find counts comparator line with
+            match List.Assoc.find counts ~equal:comparator line with
             | None -> 0
             | Some x -> x
         in
         (* Note the use of comparator. Original example did not have it. *)
-        List.Assoc.add counts comparator line (count + 1)
+        List.Assoc.add counts ~equal:comparator line (count + 1)
     )
 
 let () =
