@@ -3,7 +3,8 @@ OCAML_PACKAGES=-package core -package core_bench
 OCAML_FLAGS=-linkpkg -thread $(OCAML_PACKAGES)
 
 all: example.byte performance.byte performance_sum.byte render_table.byte \
-	more_useful_list_functions.byte
+	more_useful_list_functions.byte \
+	tail_recursion.byte
 
 clean:
 	rm -f *.cm*
