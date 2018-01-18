@@ -9,6 +9,12 @@ open Core
  *)
 let comparator a b = a = b
 
+type t = (string * int) list
+
+let empty = []
+
+let to_list x = x
+
 let touch t s =
     let count =
         (* Note the use of comparator. Original example did not have it. *)
